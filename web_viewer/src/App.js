@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <P5Wrapper sketch={sketches.test_sketch} rotation={this.state.rotation}/>
+        <P5Wrapper sketch={sketches.starfield} rotation={this.state.rotation}/>
       </div>
     );
   }
