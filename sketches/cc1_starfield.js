@@ -48,8 +48,7 @@ export default function sketch (p) {
     p.createCanvas(width, height);
     // p.createCanvas(400, 400, p.WEBGL);
   };
-
-
+  
   p.draw = () => {
     p.background(0);
     p.translate(width/2, height/2)
@@ -59,9 +58,6 @@ export default function sketch (p) {
     })
   };
 };
-
-
-
 
 // p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
   //   if (props.rotation){
