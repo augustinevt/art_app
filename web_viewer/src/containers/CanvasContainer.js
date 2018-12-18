@@ -22,7 +22,7 @@ class CanvasViewer extends Component {
 
   render() {
     const selectedSketch = !this.state.selected ?
-      sketches.mengerSponge :
+      sketches.snakeGame :
       sketches[this.state.selected];
 
     return (
