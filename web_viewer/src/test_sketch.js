@@ -55,6 +55,7 @@ export default function sketch (p) {
   let b;
   let sponge = [];
   let mic;
+  // let audioContext;
 
   p.setup = () => {
     p.createCanvas(width, height, p.WEBGL);
@@ -62,9 +63,10 @@ export default function sketch (p) {
 
     try {
       mic = new p5.AudioIn();
+      // audioContext = p5.getAudioContext();
       mic.start();
     } catch (e) {
-      console.log('foooo')
+      console.log('foomoo', e)
     }
 
     sponge.push(b);
@@ -72,26 +74,32 @@ export default function sketch (p) {
   };
 
 
-  p.mousePressed = () => {
+  // p.mousePressed = function() {
+  //
+  //   try {
+  //     if (p5.getAudioContext.state !== 'running') {
+  //       p5.getAudioContext.resume();
+  //     }
+  //   } catch (e) {
+  //     console.log('fooodo', e)
+  //   }
+  //
+  //
+  //
+  //   // const next = [];
+  //   // sponge.forEach((box) => {
+  //   //   const newBoxes = box.generate(p);
+  //   //   console.log()
+  //   //   next.push(...newBoxes)
+  //   // });
+  //   //
+  //   // sponge = next;
+  // }
 
-    try {
-      if (p5.getAudioContext().state !== 'running') {
-        p5.getAudioContext().resume();
-      }
-    } catch (e) {
-      console.log('foooo', e)
+  p.touchStarted = () => {
+    if (p.getAudioContext().state !== 'running') {
+      p.getAudioContext().resume();
     }
-
-
-
-    // const next = [];
-    // sponge.forEach((box) => {
-    //   const newBoxes = box.generate(p);
-    //   console.log()
-    //   next.push(...newBoxes)
-    // });
-    //
-    // sponge = next;
   }
 
 
