@@ -1,6 +1,10 @@
 let width = 800;
 let height = 800;
 
+// import p5 from 'p5';
+// import "p5/lib/addons/p5.sound.js";
+
+
 class Box {
   constructor(p,x,y,z,r_) {
     this.pos = new p.createVector(x,y,z);
@@ -50,14 +54,40 @@ export default function sketch (p) {
   let rotation = 0;
   let b;
   let sponge = [];
+  let mic;
 
   p.setup = () => {
     p.createCanvas(width, height, p.WEBGL);
     b = new Box(p, 0,0,0,200);
-    sponge.push(b)
+
+    // mic = new p.AudioIn((e) => {
+    //   console.log('mewo', e)
+    // });
+
+    // mic.start();
+
+    sponge.push(b);
+
   };
 
+
+  // p.touchStarted = () => {
+  //   if (p.getAudioContext().state !== 'running') {
+  //     p.getAudioContext().resume();
+  //   }
+  // }
+
+
   p.mousePressed = () => {
+
+    // console.log(new p.Ad)
+    // p.sound.start(
+    //   () => console.log(started),
+    //   (e) => {console.log(e)}
+    // )
+
+
+
     const next = [];
     sponge.forEach((box) => {
       const newBoxes = box.generate(p);

@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line
 import P5Wrapper from 'react-p5-wrapper';
+// import p5 from 'p5';
+// import "p5/lib/addons/p5.sound.js";
+
+// import "p5/lib/addons/p5.sound.js";
 import {Button} from 'antd';
 
 
 import sketches from '../../../sketches';
+import test_sketch from '../test_sketch';
 
 
 class CanvasViewer extends Component {
@@ -21,9 +27,10 @@ class CanvasViewer extends Component {
   }
 
   render() {
-    const selectedSketch = !this.state.selected ?
-      sketches.snakeGame :
-      sketches[this.state.selected];
+    const selectedSketch = test_sketch;
+    // const selectedSketch = !this.state.selected ?
+    //   test_sketch :
+    //   sketches[this.state.selected];
 
     return (
       <div>
